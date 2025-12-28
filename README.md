@@ -165,6 +165,73 @@ elaro:
 
 Each tenant can have their own instance of the plugin registered.
 
+## Centralized Logging
+
+The SDK provides centralized logging that publishes to both SLF4J (local console) and Kafka (for Console collection).
+
+### Usage
+
+```java
+@Service
+public class MyService {
+
+    private final ElaroLogger log;
+
+    public MyService(ElaroLoggerFactory loggerFactory) {
+        this.log = loggerFactory.getLogger(MyService.class);
+    }
+
+    public void processOrder(String orderId) {
+        log.info("Processing order: {}", orderId);
+
+        try {
+            // ... do work ...
+
+            log.info("Order processed successfully", ElaroLogger.context(
+                "orderId", orderId,
+                "duration", "150ms"
+            ));
+
+        } catch (Exception e) {
+            log.error("Failed to process order", e, ElaroLogger.context(
+                "orderId", orderId,
+                "step", "validation"
+            ));
+            throw e;
+        }
+    }
+}
+```
+
+### Log Levels
+
+| Level | Severity | Description |
+|-------|----------|-------------|
+| TRACE | 0 | Fine-grained debug |
+| DEBUG | 10 | Debug information |
+| INFO | 20 | Informational messages |
+| WARN | 30 | Warning conditions |
+| ERROR | 40 | Error conditions |
+| FATAL | 50 | Critical errors |
+
+### Context Helper
+
+Add structured metadata to logs:
+
+```java
+log.info("Order processed", ElaroLogger.context(
+    "orderId", "123",
+    "customerId", "456",
+    "duration", "150ms"
+));
+```
+
+### Kafka Topic
+
+Logs are published to: `elaro.logs`
+
+The Console collects these logs for display and alerting.
+
 ## Registration Status
 
 The plugin tracks its registration status:

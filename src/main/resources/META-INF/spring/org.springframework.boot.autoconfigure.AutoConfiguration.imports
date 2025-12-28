@@ -1,1 +1,2 @@
 com.elaro.plugin.sdk.ElaroPluginAutoConfiguration
+com.elaro.plugin.sdk.logging.ElaroLoggingAutoConfiguration

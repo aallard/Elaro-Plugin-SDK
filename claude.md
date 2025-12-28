@@ -43,6 +43,12 @@ src/main/java/com/elaro/plugin/sdk/
 │   ├── PluginKafkaProducer.java        # Sends to elaro.plugin.announce
 │   ├── PluginKafkaListener.java        # Listens to elaro.plugin.ack
 │   └── AckMessage.java                 # ACK message DTO
+├── logging/
+│   ├── LogLevel.java                   # Log level enum (TRACE-FATAL)
+│   ├── LogMessage.java                 # Structured log message DTO
+│   ├── ElaroLogger.java                # Logger that publishes to SLF4J + Kafka
+│   ├── ElaroLoggerFactory.java         # Factory for creating loggers
+│   └── ElaroLoggingAutoConfiguration.java  # Auto-config for logging
 ├── ui/
 │   ├── PluginScreen.java               # Annotation for React screens
 │   ├── PluginScreenRegistry.java       # Collects all @PluginScreen classes
@@ -63,7 +69,24 @@ src/main/java/com/elaro/plugin/sdk/
 - `@ElaroPlugin` - Applied to main class, triggers auto-configuration
 - `@PluginScreen` - Marks classes as UI screen definitions
 
-### 3. Configuration Prefix
+### 3. Centralized Logging
+- `ElaroLoggerFactory` creates `ElaroLogger` instances
+- Each log call goes to SLF4J (local) AND Kafka (`elaro.logs` topic)
+- Logs include serviceId, serviceName, tenantId, stackTrace, and custom context
+- Usage:
+```java
+private final ElaroLogger log;
+
+public MyService(ElaroLoggerFactory loggerFactory) {
+    this.log = loggerFactory.getLogger(MyService.class);
+}
+
+public void doWork() {
+    log.info("Processing", ElaroLogger.context("key", "value"));
+}
+```
+
+### 4. Configuration Prefix
 All properties use `elaro.plugin.*` prefix:
 ```yaml
 elaro:
@@ -96,8 +119,9 @@ elaro:
 - `AckMessage` is received from Elaro Console - must match Console's producer
 
 ### Kafka Topics
-- `elaro.plugin.announce` - SDK produces, Console consumes
-- `elaro.plugin.ack` - Console produces, SDK consumes
+- `elaro.plugin.announce` - SDK produces, Console consumes (beacon registration)
+- `elaro.plugin.ack` - Console produces, SDK consumes (registration acknowledgment)
+- `elaro.logs` - SDK produces, Console consumes (centralized logging)
 
 ## REST Endpoints Exposed
 
