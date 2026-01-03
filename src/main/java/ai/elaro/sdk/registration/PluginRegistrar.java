@@ -1,9 +1,9 @@
-package com.elaro.plugin.sdk.registration;
+package ai.elaro.sdk.registration;
 
-import com.elaro.plugin.sdk.config.PluginProperties;
-import com.elaro.plugin.sdk.kafka.AckMessage;
-import com.elaro.plugin.sdk.kafka.PluginKafkaProducer;
-import com.elaro.plugin.sdk.ui.PluginScreenRegistry;
+import ai.elaro.sdk.config.PluginProperties;
+import ai.elaro.sdk.kafka.AckMessage;
+import ai.elaro.sdk.kafka.PluginKafkaProducer;
+import ai.elaro.sdk.ui.PluginScreenRegistry;
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
 import lombok.RequiredArgsConstructor;

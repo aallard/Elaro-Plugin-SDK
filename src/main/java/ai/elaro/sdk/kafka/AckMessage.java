@@ -1,6 +1,6 @@
-package com.elaro.plugin.sdk.kafka;
+package ai.elaro.sdk.kafka;
 
-import com.elaro.plugin.sdk.registration.RegistrationStatus;
+import ai.elaro.sdk.registration.RegistrationStatus;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

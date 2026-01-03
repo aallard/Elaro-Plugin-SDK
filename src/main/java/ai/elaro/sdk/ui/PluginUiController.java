@@ -1,9 +1,9 @@
-package com.elaro.plugin.sdk.ui;
+package ai.elaro.sdk.ui;
 
-import com.elaro.plugin.sdk.config.PluginProperties;
-import com.elaro.plugin.sdk.model.ScreenDefinition;
-import com.elaro.plugin.sdk.registration.PluginManifest;
-import com.elaro.plugin.sdk.registration.PluginRegistrar;
+import ai.elaro.sdk.config.PluginProperties;
+import ai.elaro.sdk.model.ScreenDefinition;
+import ai.elaro.sdk.registration.PluginManifest;
+import ai.elaro.sdk.registration.PluginRegistrar;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -1,4 +1,4 @@
-package com.elaro.plugin.sdk.ui;
+package ai.elaro.sdk.ui;
 
 import org.springframework.stereotype.Component;
 

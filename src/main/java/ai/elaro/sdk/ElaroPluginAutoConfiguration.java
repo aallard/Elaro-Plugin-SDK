@@ -1,13 +1,13 @@
-package com.elaro.plugin.sdk;
+package ai.elaro.sdk;
 
-import com.elaro.plugin.sdk.config.PluginKafkaConfig;
-import com.elaro.plugin.sdk.config.PluginProperties;
-import com.elaro.plugin.sdk.kafka.PluginKafkaListener;
-import com.elaro.plugin.sdk.kafka.PluginKafkaProducer;
-import com.elaro.plugin.sdk.registration.PluginLifecycleManager;
-import com.elaro.plugin.sdk.registration.PluginRegistrar;
-import com.elaro.plugin.sdk.ui.PluginScreenRegistry;
-import com.elaro.plugin.sdk.ui.PluginUiController;
+import ai.elaro.sdk.config.PluginKafkaConfig;
+import ai.elaro.sdk.config.PluginProperties;
+import ai.elaro.sdk.kafka.PluginKafkaListener;
+import ai.elaro.sdk.kafka.PluginKafkaProducer;
+import ai.elaro.sdk.registration.PluginLifecycleManager;
+import ai.elaro.sdk.registration.PluginRegistrar;
+import ai.elaro.sdk.ui.PluginScreenRegistry;
+import ai.elaro.sdk.ui.PluginUiController;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
@@ -28,7 +28,7 @@ import org.springframework.kafka.annotation.EnableKafka;
 @ConditionalOnProperty(prefix = "elaro.plugin", name = "id")
 @Import(PluginKafkaConfig.class)
 @EnableKafka
-@ComponentScan(basePackages = "com.elaro.plugin.sdk")
+@ComponentScan(basePackages = "ai.elaro.sdk")
 @Slf4j
 public class ElaroPluginAutoConfiguration {
 

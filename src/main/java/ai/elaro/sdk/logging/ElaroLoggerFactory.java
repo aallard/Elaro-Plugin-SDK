@@ -1,4 +1,4 @@
-package com.elaro.plugin.sdk.logging;
+package ai.elaro.sdk.logging;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.kafka.core.KafkaTemplate;

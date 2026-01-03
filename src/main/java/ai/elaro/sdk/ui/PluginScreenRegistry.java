@@ -1,6 +1,6 @@
-package com.elaro.plugin.sdk.ui;
+package ai.elaro.sdk.ui;
 
-import com.elaro.plugin.sdk.model.ScreenDefinition;
+import ai.elaro.sdk.model.ScreenDefinition;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ApplicationContext;

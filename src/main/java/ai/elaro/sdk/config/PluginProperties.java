@@ -1,4 +1,4 @@
-package com.elaro.plugin.sdk.config;
+package ai.elaro.sdk.config;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;

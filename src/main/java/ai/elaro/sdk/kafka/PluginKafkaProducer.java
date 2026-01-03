@@ -1,7 +1,7 @@
-package com.elaro.plugin.sdk.kafka;
+package ai.elaro.sdk.kafka;
 
-import com.elaro.plugin.sdk.config.PluginProperties;
-import com.elaro.plugin.sdk.registration.PluginManifest;
+import ai.elaro.sdk.config.PluginProperties;
+import ai.elaro.sdk.registration.PluginManifest;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;

@@ -1,4 +1,4 @@
-package com.elaro.plugin.sdk.model;
+package ai.elaro.sdk.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

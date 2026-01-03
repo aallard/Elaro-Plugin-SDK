@@ -1,6 +1,6 @@
-package com.elaro.plugin.sdk.logging;
+package ai.elaro.sdk.logging;
 
-import com.elaro.plugin.sdk.config.PluginProperties;
+import ai.elaro.sdk.config.PluginProperties;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -1,4 +1,4 @@
-package com.elaro.plugin.sdk;
+package ai.elaro.sdk;
 
 import org.springframework.context.annotation.Import;
 

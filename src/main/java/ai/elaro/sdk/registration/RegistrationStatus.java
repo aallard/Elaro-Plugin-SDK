@@ -1,4 +1,4 @@
-package com.elaro.plugin.sdk.registration;
+package ai.elaro.sdk.registration;
 
 /**
  * Represents the registration status of a plugin with the Elaro platform.

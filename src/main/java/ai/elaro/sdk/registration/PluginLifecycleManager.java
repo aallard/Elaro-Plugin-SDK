@@ -1,6 +1,6 @@
-package com.elaro.plugin.sdk.registration;
+package ai.elaro.sdk.registration;
 
-import com.elaro.plugin.sdk.config.PluginProperties;
+import ai.elaro.sdk.config.PluginProperties;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ApplicationListener;

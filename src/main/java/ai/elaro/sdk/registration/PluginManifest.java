@@ -1,6 +1,6 @@
-package com.elaro.plugin.sdk.registration;
+package ai.elaro.sdk.registration;
 
-import com.elaro.plugin.sdk.model.ScreenDefinition;
+import ai.elaro.sdk.model.ScreenDefinition;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

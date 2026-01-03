@@ -1,4 +1,4 @@
-package com.elaro.plugin.sdk.logging;
+package ai.elaro.sdk.logging;
 
 /**
  * Log levels for the Elaro centralized logging system.

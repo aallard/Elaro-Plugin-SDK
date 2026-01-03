@@ -1,4 +1,4 @@
-package com.elaro.plugin.sdk.logging;
+package ai.elaro.sdk.logging;
 
 import java.time.Instant;
 import java.util.Map;
