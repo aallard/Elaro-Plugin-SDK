@@ -1,2 +1,2 @@
-com.elaro.plugin.sdk.ElaroPluginAutoConfiguration
-com.elaro.plugin.sdk.logging.ElaroLoggingAutoConfiguration
+ai.elaro.sdk.ElaroPluginAutoConfiguration
+ai.elaro.sdk.logging.ElaroLoggingAutoConfiguration
